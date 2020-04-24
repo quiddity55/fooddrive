@@ -5,152 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 				<link rel="stylesheet" href="fonts/fonts.css">
 				<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-				<style>
-					/* RESET */
-					html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
-					/* RESET */
-					body {
-						background: #ececec url('img/background.png') 0 -53px repeat-x;
-						text-align:center;
-						color:#3C3C3C;
-					}
-					#main {
-						margin:0 auto;
-						width:1200px;
-						position:relative;
-						text-align:left;
-					}
-					#tag {
-						width:54px;
-						height:101px;
-						position:absolute;
-						left:40px;
-						top:0;
-						background:url('img/adobe.png') no-repeat;
-					}
-					header {
-						position:absolute;
-						top:42px;
-						left:121px;
-					}
-					h1 {
-						font-family:'AdobeCleanLight';
-						font-size:40px;
-						margin-bottom:5px;
-					}
-					h2 {
-						font-family:'AdobeCleanLight';
-						font-size:17px;
-					}
-					h3 {
-						font-family:'AdobeClean';
-						font-weight:bold;
-						font-size:12px;
-						font-size:17px;
-						letter-spacing:2px;
-					}
-					.column {
-						height:580px;
-						width:220px;
-						float:left;
-						margin-top:105px;
-						position:relative;
-						text-align:center;
-					}
-					.total {
-						font-family:'AdobeCleanLight';
-						font-size:57px;
-						margin-top:275px;
-					}
-					#how-it-works {
-						width:210px;
-						height:268px;
-						background:url('img/how_it_works.png');
-						margin-top:15px;
-					}
-					#how-it-works ul li {
-						font-family:'AdobeCleanLight';
-						font-size:12px;
-						margin: 0 19px;
-						padding-bottom: 10px;
-					}
-					#matching {
-						width:172px;
-						height:41px;
-						margin: 27px 19px 10px;
-					}
-					.box-back {
-						position:absolute;
-						bottom:25px;
-						left:35px;
-						width:172px;
-						height:100px;
-						background:url('img/box_back.png') no-repeat;
-					}
-					.cans {
-						position:absolute;
-						width:123px;
-						height:596px;
-						bottom: 44px;
-						left: 51px;
-						clip: rect(0, 223px, 596px, 0);
-					}
-					.box-front {
-						position:absolute;
-						bottom:0;
-						left:13px;
-						width:197px;
-						height:105px;
-						background:url('img/box_front.png') no-repeat;
-					}
-					.can-tower {
-						position:absolute;
-						width:123px;
-						height:596px;
-						background:url('img/cans.png');
-						top:530px;
-					}
-					.ribbon {
-						position:absolute;
-						width:135px;
-						height:40px;
-						background:url('img/ribbon.png');
-						top:555px; /* 25 more than .can-tower top */
-						left:70px;
-						color:#fff;
-						font-family:'AdobeClean';
-						font-weight:bold;
-						opacity:0;
-						text-indent: 16px;
-						line-height: 28px;
-						text-align:left;
-					}
-					.donate {
-						display:block;
-						width:85px;
-						height:36px;
-						background:url('img/donate.png');
-						text-indent:-9999px;
-						margin:0 auto;
-					}
-					h4 {
-						font-family:'AdobeClean';
-						font-size:30px;
-						margin:0 auto;
-						bottom:0;
-						margin:590px 0 10px 0;
-					}
-					.left {
-						text-align:left;
-					}
-					#footer {
-						position: relative;
-						bottom: -120px;
-						font-family:'AdobeCleanLight';
-						clear: left;
-						font-size: 12px;
-					}
-				</style>
+				<link rel="stylesheet" href="css/main.css"
     </head>
 		<body>
 			<div id="main">
@@ -182,7 +37,7 @@
 					</div>
 					<div class="box-front"></div>
 					<h4>Traverse/Floor 1</h4>
-					<a href="https://adobe.benevity.org/campaigns/404" class="donate">Donate!</a>
+					<a href="https://adobe.benevity.org/campaigns/1464" class="donate">Donate!</a>
 				</div>
 				<div class="column">
 					<div class="box-back"></div>
@@ -257,7 +112,7 @@
 
 
 			var stackHeight = 530; /* see .can-tower top */
-			var endDate = new Date(2019, 4, 31);
+			var endDate = new Date(2020, 05, 31);
 			var today = new Date();
 			var daysRemaining = Math.floor((endDate.getTime() - today.getTime())/1000/86400);
 			if(daysRemaining < 0) {
