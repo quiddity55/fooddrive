@@ -5,14 +5,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 				<link rel="stylesheet" href="fonts/fonts.css">
 				<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-				<link rel="stylesheet" href="css/main.css"
+				<link rel="stylesheet" href="css/main.css">
+                <link rel="stylesheet" href="css/tachometer.css">
+                <link rel="stylesheet" href="css/thermometer.css">
+                <script src="js/core.js"></script>
+                <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+                <script src="https://www.amcharts.com/lib/4/themes/kelly.js"></script>
+                <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
     </head>
 		<body>
 			<div id="main">
 				<img id="tag" />
 				<header>
 					<h1>Adobe Lehi Summer Food Drive 2020</h1>
-					<h2>Benefiting Tabitha's Way</h2>
+					<h2>Benefiting Utah Food Bank</h2>
 				</header>
 				<div class="column left">
 					<div class="total">
@@ -22,56 +28,37 @@
 					<div id="how-it-works">
 						<img id="matching" src="img/matching.png" />
 						<ul>
-							<li>$1 = a meal for a family of 4</li>
-							<li>$5 = feeds a family of 4 for 2 days</li>
-							<li>$10 = feeds one for almost 2 weeks</li>
-							<li>$50 = feeds a family of 4 for 2 weeks</li>
+							<li>$50 = feeds a family of 4 for 4 weeks</li>
 						</ul>
 					</div>
 				</div>
-				<div class="column">
-					<div class="box-back"></div>
-					<div class="cans">
-						<div id="group1total" class="ribbon">$0</div>
-						<div id="group1" class="can-tower"></div>
-					</div>
-					<div class="box-front"></div>
-					<h4>Traverse/Floor 1</h4>
-					<a href="https://adobe.benevity.org/campaigns/1464" class="donate">Donate!</a>
-				</div>
-				<div class="column">
-					<div class="box-back"></div>
-					<div class="cans">
-						<div id="group2total" class="ribbon">$0</div>
-						<div id="group2" class="can-tower"></div>
-					</div>
-					<div class="box-front"></div>
-					<h4>Floor 2</h4>
-					<a href="https://adobe.benevity.org/campaigns/366" class="donate">Donate!</a>
-				</div>
-				<div class="column">
-					<div class="box-back"></div>
-					<div class="cans">
-						<div id="group3total" class="ribbon">$0</div>
-						<div id="group3" class="can-tower"></div>
-					</div>
-					<div class="box-front"></div>
-					<h4>Floor 3</h4>
-					<a href="https://adobe.benevity.org/campaigns/405" class="donate">Donate!</a>
-				</div>
-				<div class="column">
-					<div class="box-back"></div>
-					<div class="cans">
-						<div id="group4total" class="ribbon">$0</div>
-						<div id="group4" class="can-tower"></div>
-					</div>
-					<div class="box-front"></div>
-					<h4>Floor 4</h4>
-					<a href="https://adobe.benevity.org/campaigns/406" class="donate">Donate!</a>
-				</div>
+                <div class="tach-column">
+                    <div id="chartdiv" class="tach-column"></div>
+                </div>    
+                <div class="therm-column">
+                    <div class="thermometer-wrapper">
+                        <div class="thermometer-rule">
+                            <span class="thermometer-rule-steps"></span>
+                            <span class="thermometer-rule-steps"></span>
+                            <span class="thermometer-rule-steps"></span>
+                            <span class="thermometer-rule-steps"></span>
+                            <span class="thermometer-rule-steps"></span>
+                            <span class="thermometer-rule-steps"></span>
+                            <span class="thermometer-rule-steps"></span>
+                            <span class="thermometer-rule-steps"></span>
+                            <span class="thermometer-rule-steps"></span>
+                            <span class="thermometer-rule-steps"></span>
+                            <span class="thermometer-rule-steps"></span>
+                            <span class="thermometer-rule-steps"></span>
+                            <span class="thermometer-rule-steps"></span>
+                        </div>
+                        <div class="thermometer-liquid anim-heat"></div>
+                        <div class="thermometer-base"></div>
+                    </div>
+                </div>
 			</div>
 			<div id="footer">
-				*Tabitha's Way stretches every $1 donated to $7 worth of goods and services. Additionally, all donations made here will be automatically matched by Adobe. The total reflects the stretch and the match.<br />Floor totals are calculated on a per-head-basis.
+				*Utah Food bank stretches every $1 donated to $7 worth of goods and services. Additionally, all donations made here will be automatically matched by Adobe. The total reflects the stretch and the match.
 			</div>
 		</body>
 		<script type="text/javascript">
@@ -97,70 +84,57 @@
 			//var totalImpact = matchingFactor * (group1cash + group2cash + group3cash + group4cash);
 			var totalImpact = 725731.72;
 
-			function animateNumber(destination, element) {
-				$({numberValue: 0}).animate({numberValue: destination}, {
-					duration: animDuration,
-					easing: 'swing',
-					step: function() {
-						element.text('$' + this.numberValue.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
-					},
-					complete: function() {
-						element.text('$' + destination.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
-					}
-				});
-			}
+            
+            // Themes begin
+            am4core.useTheme(am4themes_kelly);
+            am4core.useTheme(am4themes_animated);
+            // Themes end
 
+            // create chart
+            var chart = am4core.create("chartdiv", am4charts.GaugeChart);
+            chart.hiddenState.properties.opacity = 0; // this makes initial fade in effect
 
-			var stackHeight = 530; /* see .can-tower top */
-			var endDate = new Date(2020, 05, 31);
-			var today = new Date();
-			var daysRemaining = Math.floor((endDate.getTime() - today.getTime())/1000/86400);
-			if(daysRemaining < 0) {
-				daysRemaining = 0;
-			}
+            chart.innerRadius = -25;
 
-			var driveLengthinDays = 31;
-			var groupMax = Math.max(group1, group2, group3, group4);
+            var axis = chart.xAxes.push(new am4charts.ValueAxis());
+            axis.min = 0;
+            axis.max = 100;
+            axis.strictMinMax = true;
+            axis.renderer.grid.template.stroke = new am4core.InterfaceColorSet().getFor("background");
+            axis.renderer.grid.template.strokeOpacity = 0.3;
 
-			// We used to show this based on drive progress.
-			//var todayMaxPercent = (driveLengthinDays - daysRemaining) / driveLengthinDays;
-			var todayMaxPercent = 0.9;
+            var colorSet = new am4core.ColorSet();
 
-			var group1Pos = (stackHeight * todayMaxPercent) * (group1/groupMax);
-			var group2Pos = (stackHeight * todayMaxPercent) * (group2/groupMax);
-			var group3Pos = (stackHeight * todayMaxPercent) * (group3/groupMax);
-			var group4Pos = (stackHeight * todayMaxPercent) * (group4/groupMax);
+            var range0 = axis.axisRanges.create();
+            range0.value = 0;
+            range0.endValue = 50;
+            range0.axisFill.fillOpacity = 1;
+            range0.axisFill.fill = colorSet.getIndex(0);
+            range0.axisFill.zIndex = - 1;
 
-			if(group1 == 0) {
-				$('#group1, #group1total').hide();
-			} else {
-				$('#group1').animate({top:stackHeight - group1Pos}, animDuration, 'swing');
-				$('#group1total').animate({top:stackHeight - group1Pos + 25, opacity:1}, animDuration, 'swing');
-			}
-			if(group2 == 0) {
-				$('#group2, #group2total').hide();
-			} else {
-				$('#group2').animate({top:stackHeight - group2Pos}, animDuration, 'swing');
-				$('#group2total').animate({top:stackHeight - group2Pos + 25, opacity:1}, animDuration, 'swing');
-			}
-			if(group3 == 0) {
-				$('#group3, #group3total').hide();
-			} else {
-				$('#group3').animate({top:stackHeight - group3Pos}, animDuration, 'swing');
-				$('#group3total').animate({top:stackHeight - group3Pos + 25, opacity:1}, animDuration, 'swing');
-			}
-			if(group4 == 0) {
-				$('#group4, #group4total').hide();
-			} else {
-				$('#group4').animate({top:stackHeight - group4Pos}, animDuration, 'swing');
-				$('#group4total').animate({top:stackHeight - group4Pos + 25, opacity:1}, animDuration, 'swing');
-			}
+            var range1 = axis.axisRanges.create();
+            range1.value = 50;
+            range1.endValue = 80;
+            range1.axisFill.fillOpacity = 1;
+            range1.axisFill.fill = colorSet.getIndex(2);
+            range1.axisFill.zIndex = -1;
 
-			animateNumber(totalImpact, $('.column .total'));
-			animateNumber(group1, $('#group1total'));
-			animateNumber(group2, $('#group2total'));
-			animateNumber(group3, $('#group3total'));
-			animateNumber(group4, $('#group4total'));
+            var range2 = axis.axisRanges.create();
+            range2.value = 80;
+            range2.endValue = 100;
+            range2.axisFill.fillOpacity = 1;
+            range2.axisFill.fill = colorSet.getIndex(4);
+            range2.axisFill.zIndex = -1;
+
+            var hand = chart.hands.push(new am4charts.ClockHand());
+
+            // using chart.setTimeout method as the timeout will be disposed together with a chart
+            hand.showValue(0, 0, am4core.ease.cubicOut);
+            chart.setTimeout(10, 2000);
+            hand.showValue(10, 10, am4core.ease.cubicOut);
+            chart.setTimeout(10, 2000);
+
+            
 		</script>
 </html>
 
