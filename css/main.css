@@ -20,13 +20,15 @@ body {
     height:215px;
 }
 .textcolumn {
-    margin-top:300px;
+    margin-top:500px;
     width:300px;
     text-align:right;
     display:block;
+    font-family: 'AdobeClean'
 }
 .textdescription {
     height:50px;
+    font-family: 'AdobeClean'
 }
 #tag {
     width:54px;
