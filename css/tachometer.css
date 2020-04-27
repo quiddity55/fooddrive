@@ -1,9 +1,9 @@
 .tach-column {
     height:580px;
     float:center;
-    margin-top:315px;
     position:relative;
     text-align:center;
+    margin-top: -50px;
 }
 
 #chartdiv {
