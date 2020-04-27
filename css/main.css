@@ -20,9 +20,10 @@ body {
     height:215px;
 }
 .textcolumn {
+    margin-top:300px;
     width:300px;
-    text-align:center;
-    display: block;
+    text-align:right;
+    display:block;
 }
 .textdescription {
     height:50px;
