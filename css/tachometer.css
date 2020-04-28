@@ -3,7 +3,12 @@
     float:center;
     position:relative;
     text-align:center;
-    margin-top: -50px;
+    margin-top: 50px;
+    width: 320px;
+}
+.tach-description {
+    margin-top:200px;
+    margin-bottom:-50px;
     width: 320px;
 }
 
