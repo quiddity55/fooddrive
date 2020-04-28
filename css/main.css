@@ -9,17 +9,20 @@ body {
 }
 #main {
     margin:0 auto;
-    width:inherit;
     position:relative;
     text-align:left;
 }
 #topbar {
-    top:0px;
-    right:0px;
-    left:0px;
+    margin:0 auto;
     height:215px;
+    width:900px;
+}
+.centercolumn {
+    margin:0 auto;
+    position:relative;
 }
 .textcolumn {
+    position:relative;
     margin-top:500px;
     width:100px;
     text-align:right;
@@ -27,6 +30,7 @@ body {
     font-family:'AdobeClean'
 }
 .textdescription {
+    position:relative;
     height:50px;
     font-family:'AdobeClean';
     text-align:center;
