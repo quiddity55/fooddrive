@@ -176,6 +176,6 @@
 (max-device-width:480px) and
 (orientation:portrait) {
     main{
-        transform: scale(.5);
+        transform: scale(.3);
     }
 }
