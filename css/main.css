@@ -14,7 +14,7 @@ body {
 }
 #topbar {
     margin:0 auto;
-    height:215px;
+    height:140px;
     width:900px;
 }
 .centercolumn {
@@ -31,7 +31,7 @@ body {
 }
 .textdescription {
     position:relative;
-    height:50px;
+    height:80px;
     font-family:'AdobeClean';
     text-align:center;
 }
