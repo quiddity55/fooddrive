@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
 .therm-column {
-    height:380px;
+    height:280px;
     width:120px;
     float:right;
-    margin-top:105px;
+    margin-top:95px;
     position:relative;
     text-align:center;
 }
@@ -17,13 +17,13 @@
 .thermometer-wrapper{
     position: relative;
     width: 120px;
-    height: 600px;
+    height: 500px;
 }
 .thermometer-base{
     position: relative;
     top: -158px;
     width: 70px;
-    height: 500px;
+    height: 400px;
     border-radius: 70px 70px 0 0;
     background-color: rgb(200,200,200);
 }
@@ -35,14 +35,14 @@
     display: block;
 }
 .thermometer-base::before{
-    top: 460px;
+    top: 360px;
     width: 70px;
     height: 40px;
     box-shadow: inset 26px 0 0 rgba(5,15,25,.15);
     z-index: 2;
 }
 .thermometer-base::after{
-    top: 474px;
+    top: 374px;
     left: 50%;
     width: 100px;
     height: 100px;
@@ -52,9 +52,9 @@
 .thermometer-base,
 .thermometer-base::after{
     box-shadow:
-    0 0 0 8px rgb(37, 38, 44),
+    0 0 0 8px rgb(169, 169, 169),
     inset 26px 0 0 rgba(5,15,25,.15),
-    0 18px 0 rgba(0,0,0,.25),
+    0 18px 0 rgba(0,0,0,.0),
     0 19px 20px rgba(0,0,0,.25);
 }
 .thermometer-liquid{
@@ -88,7 +88,7 @@
 }
 .thermometer-rule{
     position: absolute;
-    bottom: 60%;
+    bottom: 75%;
     left: 50%;
     width: 44px;
     height: 375px;

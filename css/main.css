@@ -23,8 +23,8 @@ body {
 }
 .textcolumn {
     position:relative;
-    margin-top:500px;
-    width:100px;
+    margin-top:450px;
+    width:60px;
     text-align:right;
     display:block;
     font-family:'AdobeClean'
@@ -91,7 +91,7 @@ h3 {
 #how-it-works ul li {
     font-family:'AdobeCleanLight';
     font-size:12px;
-    margin: 0 19px;
+    margin: 0 17px;
     padding-bottom: 10px;
 }
 #matching {
@@ -166,7 +166,7 @@ h4 {
 }
 #footer {
     position: relative;
-    bottom: -120px;
+    bottom: -80px;
     font-family:'AdobeCleanLight';
     clear: left;
     font-size: 12px;
