@@ -31,15 +31,17 @@ body {
 }
 .textdescription {
     position:relative;
-    height:80px;
+    height:65px;
     font-family:'AdobeClean';
     text-align:center;
-    line-height:1.6
+    line-height:1.6;
+    z-index: 5;
 }
 .donatebutton {
     margin:10px auto;
     height:50px;
     width:120px;
+    z-index: 1;
 }
 #tag {
     width:54px;
@@ -173,8 +175,8 @@ h4 {
 }
 
 
-.donate-button {
+.donate-button-spacer {
     font-size: 21px;
     display:block;
-    height: 20px;
+    height: 35px;
 }
