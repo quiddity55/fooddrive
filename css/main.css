@@ -173,7 +173,8 @@ h4 {
 }
 
 
-.donatebutton {
+.donate-button {
     font-size: 21px;
     display:block;
+    height: 20px;
 }
