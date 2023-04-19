@@ -124,7 +124,7 @@
         inset -6px 0 0 rgba(255,255,255,.1);
     }
     to{
-        height: 85px;
+        height: 150px;
         background-color: rgb(180,10,10);
         box-shadow:
         inset 22px 0 0 rgba(5,15,25,.15),
