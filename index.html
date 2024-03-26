@@ -1,269 +1,174 @@
 <!DOCTYPE html>
-
-<head>
-	<meta charset="utf-8">
-	<title></title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="fonts/fonts.css">
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/tachometer.css">
-	<link rel="stylesheet" href="css/thermometer.css">
-	<script src="js/core.js"></script>
-	<script src="https://www.amcharts.com/lib/4/charts.js"></script>
-	<script src="https://www.amcharts.com/lib/4/themes/kelly.js"></script>
-	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-</head>
-
-<body>
-	<div id="topbar">
-		<div id="main">
-			<img id="tag" />
-			<header>
-				<h1>Adobe Utah Food Drive Fundraiser 2023</h1>
-				<h2>Benefiting Utah Food Bank</h2>
-			</header>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+				<link rel="stylesheet" href="fonts/fonts.css">
+				<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+				<link rel="stylesheet" href="css/main.css">
+                <link rel="stylesheet" href="css/tachometer.css">
+                <link rel="stylesheet" href="css/thermometer.css">
+                <script src="js/core.js"></script>
+                <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+                <script src="https://www.amcharts.com/lib/4/themes/kelly.js"></script>
+                <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    </head>
+		<body>
+		<div id="topbar">
+			<div id="main">
+				<img id="tag" />
+				<header>
+					<h1>Adobe Utah Food Drive Fundraiser 2020</h1>
+					<h2>Benefiting Utah Food Bank</h2>
+				</header>
+			</div>
 		</div>
-	</div>
-	<table class="centercolumn">
-		<tr>
-			<td colspan=4>
-			</td>
+ 		<table class="centercolumn">
+ 		<tr>
+ 		<td colspan=4>
+		</td>
 		</tr>
 		<tr>
-			<td rowspan=2>
+		<td rowspan=2>
 				<div class="column left">
 					<div class="total">
-						$1,128,407
+						$0
 					</div>
 					<h3>TOTAL RAISED*</h3>
 					<div id="how-it-works">
 						<img id="matching" src="img/matching.png" />
 						<ul>
-							<li>Every $1 donated equals $9 due to food bank buying power</li>
+							<li>Every $1 donated equals $7 due to food bank buying power</li>
 							<li>$50 = feeds a family of 4 for 4 weeks</li>
-							<li>Site Engagement Percentage is calculated based on site population</li>
+							<li>Site Engagement Percentage is calculated based on site population of 1408</li>
 						</ul>
+			<div class="donatebutton">
+			<a href="https://adobe.benevity.org/campaigns/1464" target="_blank" class="donate">Donate!</a>
+			</div>
 					</div>
 				</div>
-			</td>
-			<td rowspan=2>
-				<div class="textcolumn">
-					
-				</div>
-			</td>
-			<td>
-				<div class="textdescription">
-					Donation Total*<br>
-					GOAL: $1,100,000
-				</div>
-			</td>
-			<td rowspan=2>
-				<div class="textdescription tach-description">
-					Site Engagement Percentage<br>
-					GOAL: 50%
-				</div>
-				<div id="total-engagement" class="tach-column"></div>
-			</td>
-			<td rowspan="2">
-				<div class="textdescription tach-description">
-					UT1 Engagement Percentage
-					<a href="https://adobe.benevity.org/campaigns/3637" target="_blank" class="donate">Donate!</a>
-				</div>
-				
-				<div id="ut1engagement" class="tach-column"></div>
-				<div class="textdescription tach-description">
-					UT2/Remote Engagement Percentage
-					<a href="https://adobe.benevity.org/campaigns/3638" target="_blank" class="donate">Donate!</a>
-				</div>
-				
-				<div id="ut2engagement" class="tach-column"></div>
-			</td>
+		</td>
+		<td rowspan=2>
+			<div class="textcolumn">
+			$100
+			</div>
+		</td>
+		<td>
+			<div class="textdescription">
+			Donation Total<br>
+			GOAL: $1,000,000
+			</div>
+		</td>
+		<td rowspan=2>
+			<div class="textdescription tach-description">
+			Site Engagement Percentage<br>
+			GOAL: 50%
+			</div>
+			<div id="chartdiv" class="tach-column"></div>
+		</td>
 		<tr>
-			<td>
-				<div class="therm-column">
-					<div class="thermometer-wrapper">
-						<div class="thermometer-rule">
-							<span class="thermometer-rule-steps"></span>
-							<span class="thermometer-rule-steps"></span>
-							<span class="thermometer-rule-steps"></span>
-							<span class="thermometer-rule-steps"></span>
-							<span class="thermometer-rule-steps"></span>
-							<span class="thermometer-rule-steps"></span>
-							<span class="thermometer-rule-steps"></span>
-							<span class="thermometer-rule-steps"></span>
-							<span class="thermometer-rule-steps"></span>
-							<span class="thermometer-rule-steps"></span>
-							<span class="thermometer-rule-steps"></span>
-							<span class="thermometer-rule-steps"></span>
-							<span class="thermometer-rule-steps"></span>
-						</div>
-						<div class="thermometer-liquid anim-heat"></div>
-						<div class="thermometer-base"></div </div>
-					</div>
-			</td>
+		<td>
+                <div class="therm-column">
+                    <div class="thermometer-wrapper">
+                        <div class="thermometer-rule">
+                            <span class="thermometer-rule-steps"></span>
+                            <span class="thermometer-rule-steps"></span>
+                            <span class="thermometer-rule-steps"></span>
+                            <span class="thermometer-rule-steps"></span>
+                            <span class="thermometer-rule-steps"></span>
+                            <span class="thermometer-rule-steps"></span>
+                            <span class="thermometer-rule-steps"></span>
+                            <span class="thermometer-rule-steps"></span>
+                            <span class="thermometer-rule-steps"></span>
+                            <span class="thermometer-rule-steps"></span>
+                            <span class="thermometer-rule-steps"></span>
+                            <span class="thermometer-rule-steps"></span>
+                            <span class="thermometer-rule-steps"></span>
+                        </div>
+                        <div class="thermometer-liquid anim-heat"></div>
+                        <div class="thermometer-base"></div
+                    </div>
+                </div>
+		</td>
 		</tr>
-	</table>
-	<div id="footer">
-		*Total Raised is calculated as (Donation + Adobe Match) x 9. All donations through the Impact@Adobe site will be
-		matched per your preferences at the time of donation. <br>Site Engagement Percentage is calculated based on site
-		population.
-	</div>
-</body>
-<script type="text/javascript">
-	var animDuration = 3000;
+		</table>
+			<div id="footer">
+				*Total Raised is calculated as (Donation + Adobe Match) x 7. All donations through the Impact@Adobe site will be matched per your preferences at the time of donation. <br>Site Engagement Percentage is calculated based on site population of 1408.
+			</div>
+		</body>
+		<script type="text/javascript">
+			var animDuration = 3000;
 
-	var totalSiteEngagementPercentage = 39.8;
-	var ut1EngagementPercentage = 43.7;
-	var ut2EngagementPercentage = 37.0;
+			var group1people = 380;
+			var group2people = 351;
+			var group3people = 341;
+			var group4people = 341;
 
-	var group1people = group2people + group3people;
-	var group2people = 1;
-	var group3people = 1;
+			var group1cash = 12333.08;
+			var group2cash = 15561.9;
+			var group3cash = 16561;
+			var group4cash = 8632;
 
-	var group1cash = 1000;
+			var matchingFactor = 7;
 
-	var matchingFactor = 9;
+			var group1 = group1cash / group1people;
+			var group2 = group2cash / group2people;
+			var group3 = group3cash / group3people;
+			var group4 = group4cash / group4people;
 
+			//var totalImpact = matchingFactor * (group1cash + group2cash + group3cash + group4cash);
+			var totalImpact = 725731.72;
 
-	// var totalImpact = matchingFactor * (group1cash + group2cash + group3cash + group4cash);
-	var totalImpact = 0.0;
+            
+            // Themes begin
+            am4core.useTheme(am4themes_kelly);
+            am4core.useTheme(am4themes_animated);
+            // Themes end
 
+            // create chart
+            var chart = am4core.create("chartdiv", am4charts.GaugeChart);
+            chart.hiddenState.properties.opacity = 0; // this makes initial fade in effect
 
-	// Themes begin
-	am4core.useTheme(am4themes_kelly);
-	am4core.useTheme(am4themes_animated);
-	// Themes end
+            chart.innerRadius = -25;
 
-	// create total engagement chart
-	var totalEngagementChart = am4core.create("total-engagement", am4charts.GaugeChart);
-	totalEngagementChart.hiddenState.properties.opacity = 0; // this makes initial fade in effect
+            var axis = chart.xAxes.push(new am4charts.ValueAxis());
+            axis.min = 0;
+            axis.max = 100;
+            axis.strictMinMax = true;
+            axis.renderer.grid.template.stroke = new am4core.InterfaceColorSet().getFor("background");
+            axis.renderer.grid.template.strokeOpacity = 0.3;
 
-	totalEngagementChart.innerRadius = -25;
+            var colorSet = new am4core.ColorSet();
 
-	var totalEngagementAxis = totalEngagementChart.xAxes.push(new am4charts.ValueAxis());
-	totalEngagementAxis.min = 0;
-	totalEngagementAxis.max = 100;
-	totalEngagementAxis.strictMinMax = true;
-	totalEngagementAxis.renderer.grid.template.stroke = new am4core.InterfaceColorSet().getFor("background");
-	totalEngagementAxis.renderer.grid.template.strokeOpacity = 0.3;
+            var range0 = axis.axisRanges.create();
+            range0.value = 0;
+            range0.endValue = 50;
+            range0.axisFill.fillOpacity = 1;
+            range0.axisFill.fill = colorSet.getIndex(0);
+            range0.axisFill.zIndex = - 1;
 
-	var colorSet = new am4core.ColorSet();
+            var range1 = axis.axisRanges.create();
+            range1.value = 50;
+            range1.endValue = 80;
+            range1.axisFill.fillOpacity = 1;
+            range1.axisFill.fill = colorSet.getIndex(2);
+            range1.axisFill.zIndex = -1;
 
-	var totalEngagementRange0 = totalEngagementAxis.axisRanges.create();
-	totalEngagementRange0.value = 0;
-	totalEngagementRange0.endValue = 50;
-	totalEngagementRange0.axisFill.fillOpacity = 1;
-	totalEngagementRange0.axisFill.fill = colorSet.getIndex(0);
-	totalEngagementRange0.axisFill.zIndex = - 1;
+            var range2 = axis.axisRanges.create();
+            range2.value = 80;
+            range2.endValue = 100;
+            range2.axisFill.fillOpacity = 1;
+            range2.axisFill.fill = colorSet.getIndex(4);
+            range2.axisFill.zIndex = -1;
 
-	var totalEngagementRange1 = totalEngagementAxis.axisRanges.create();
-	totalEngagementRange1.value = 50;
-	totalEngagementRange1.endValue = 80;
-	totalEngagementRange1.axisFill.fillOpacity = 1;
-	totalEngagementRange1.axisFill.fill = colorSet.getIndex(2);
-	totalEngagementRange1.axisFill.zIndex = -1;
+            var hand = chart.hands.push(new am4charts.ClockHand());
 
-	var totalEngagementRange2 = totalEngagementAxis.axisRanges.create();
-	totalEngagementRange2.value = 80;
-	totalEngagementRange2.endValue = 100;
-	totalEngagementRange2.axisFill.fillOpacity = 1;
-	totalEngagementRange2.axisFill.fill = colorSet.getIndex(4);
-	totalEngagementRange2.axisFill.zIndex = -1;
+            // using chart.setTimeout method as the timeout will be disposed together with a chart
+            hand.showValue(0, 0, am4core.ease.cubicOut);
+            chart.setTimeout(10, 2000);
+            hand.showValue(10, 10, am4core.ease.cubicOut);
+            chart.setTimeout(10, 2000);
 
-	var totalEngagementHand = totalEngagementChart.hands.push(new am4charts.ClockHand());
-
-	// using chart.setTimeout method as the timeout will be disposed together with a chart
-	totalEngagementHand.showValue(totalSiteEngagementPercentage, 10, am4core.ease.cubicOut);
-	totalEngagementChart.setTimeout(10, 2000);
-
-
-	// create UT1 engagement gauge
-	var ut1EngagementGauge = am4core.create("ut1engagement", am4charts.GaugeChart);
-	ut1EngagementGauge.hiddenState.properties.opacity = 0; // this makes initial fade in effect
-
-	ut1EngagementGauge.innerRadius = -25;
-
-	var ut1EngagementAxis = ut1EngagementGauge.xAxes.push(new am4charts.ValueAxis());
-	ut1EngagementAxis.min = 0;
-	ut1EngagementAxis.max = 100;
-	ut1EngagementAxis.strictMinMax = true;
-	ut1EngagementAxis.renderer.grid.template.stroke = new am4core.InterfaceColorSet().getFor("background");
-	ut1EngagementAxis.renderer.grid.template.strokeOpacity = 0.3;
-
-	var colorSet = new am4core.ColorSet();
-
-	var ut1EngagementRange0 = ut1EngagementAxis.axisRanges.create();
-	ut1EngagementRange0.value = 0;
-	ut1EngagementRange0.endValue = 50;
-	ut1EngagementRange0.axisFill.fillOpacity = 1;
-	ut1EngagementRange0.axisFill.fill = colorSet.getIndex(0);
-	ut1EngagementRange0.axisFill.zIndex = - 1;
-
-	var ut1EngagementRange1 = ut1EngagementAxis.axisRanges.create();
-	ut1EngagementRange1.value = 50;
-	ut1EngagementRange1.endValue = 80;
-	ut1EngagementRange1.axisFill.fillOpacity = 1;
-	ut1EngagementRange1.axisFill.fill = colorSet.getIndex(2);
-	ut1EngagementRange1.axisFill.zIndex = -1;
-
-	var ut1EngagementRange2 = ut1EngagementAxis.axisRanges.create();
-	ut1EngagementRange2.value = 80;
-	ut1EngagementRange2.endValue = 100;
-	ut1EngagementRange2.axisFill.fillOpacity = 1;
-	ut1EngagementRange2.axisFill.fill = colorSet.getIndex(4);
-	ut1EngagementRange2.axisFill.zIndex = -1;
-
-	var ut1EngagementHand = ut1EngagementGauge.hands.push(new am4charts.ClockHand());
-
-	// using chart.setTimeout method as the timeout will be disposed together with a chart
-	ut1EngagementHand.showValue(ut1EngagementPercentage, 10, am4core.ease.cubicOut);
-	ut1EngagementGauge.setTimeout(10, 2000);
-
-
-	// create UT2 engagement gauge
-	var ut2EngagementGauge = am4core.create("ut2engagement", am4charts.GaugeChart);
-	ut2EngagementGauge.hiddenState.properties.opacity = 0; // this makes initial fade in effect
-
-	ut2EngagementGauge.innerRadius = -25;
-
-	var ut2EngagementAxis = ut2EngagementGauge.xAxes.push(new am4charts.ValueAxis());
-	ut2EngagementAxis.min = 0;
-	ut2EngagementAxis.max = 100;
-	ut2EngagementAxis.strictMinMax = true;
-	ut2EngagementAxis.renderer.grid.template.stroke = new am4core.InterfaceColorSet().getFor("background");
-	ut2EngagementAxis.renderer.grid.template.strokeOpacity = 0.3;
-
-	var colorSet = new am4core.ColorSet();
-
-	var ut2EngagementRange0 = ut2EngagementAxis.axisRanges.create();
-	ut2EngagementRange0.value = 0;
-	ut2EngagementRange0.endValue = 50;
-	ut2EngagementRange0.axisFill.fillOpacity = 1;
-	ut2EngagementRange0.axisFill.fill = colorSet.getIndex(0);
-	ut2EngagementRange0.axisFill.zIndex = - 1;
-
-	var ut2EngagementRange1 = ut2EngagementAxis.axisRanges.create();
-	ut2EngagementRange1.value = 50;
-	ut2EngagementRange1.endValue = 80;
-	ut2EngagementRange1.axisFill.fillOpacity = 1;
-	ut2EngagementRange1.axisFill.fill = colorSet.getIndex(2);
-	ut2EngagementRange1.axisFill.zIndex = -1;
-
-	var ut2EngagementRange2 = ut2EngagementAxis.axisRanges.create();
-	ut2EngagementRange2.value = 80;
-	ut2EngagementRange2.endValue = 100;
-	ut2EngagementRange2.axisFill.fillOpacity = 1;
-	ut2EngagementRange2.axisFill.fill = colorSet.getIndex(4);
-	ut2EngagementRange2.axisFill.zIndex = -1;
-
-	var ut2EngagementHand = ut2EngagementGauge.hands.push(new am4charts.ClockHand());
-
-	// using chart.setTimeout method as the timeout will be disposed together with a chart
-	ut2EngagementHand.showValue(ut2EngagementPercentage, 10, am4core.ease.cubicOut);
-	ut2EngagementGauge.setTimeout(10, 2000);
-
-
-</script>
-
+            
+		</script>
 </html>
