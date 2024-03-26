@@ -1,181 +1,173 @@
-@charset "UTF-8";
-
-.therm-column {
-    height:380px;
+/* RESET */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:top;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+/* RESET */
+body {
+    background: #ececec url('../img/background.png') 0 -53px repeat-x;
+    text-align:center;
+    color:#3C3C3C;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+#main {
+    margin:0 auto;
+    position:relative;
+    text-align:left;
+}
+#topbar {
+    margin:0 auto;
+    height:140px;
+    width:900px;
+}
+.centercolumn {
+    margin:0 auto;
+    position:relative;
+}
+.textcolumn {
+    position:relative;
+    margin-top:500px;
+    width:100px;
+    text-align:right;
+    display:block;
+    font-family:'AdobeClean'
+}
+.textdescription {
+    position:relative;
+    height:80px;
+    font-family:'AdobeClean';
+    text-align:center;
+    line-height:1.6
+}
+.donatebutton {
+    margin:10px auto;
+    height:50px;
     width:120px;
-    float:right;
+}
+#tag {
+    width:54px;
+    height:101px;
+    position:absolute;
+    left:40px;
+    top:0;
+    background:url('../img/adobe.png') no-repeat;
+}
+header {
+    position:absolute;
+    top:42px;
+    left:121px;
+}
+h1 {
+    font-family:'AdobeCleanLight';
+    font-size:40px;
+    margin-bottom:5px;
+}
+h2 {
+    font-family:'AdobeCleanLight';
+    font-size:17px;
+}
+h3 {
+    font-family:'AdobeClean';
+    font-weight:bold;
+    font-size:12px;
+    font-size:17px;
+    letter-spacing:2px;
+}
+.column {
+    height:360px;
+    width:220px;
+    float:left;
     margin-top:105px;
     position:relative;
     text-align:center;
 }
-.thermometer-wrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column;
+.total {
+    font-family:'AdobeCleanLight';
+    font-size:57px;
 }
-.thermometer-wrapper{
+#how-it-works {
+    width:210px;
+    height:268px;
+    background:url('../img/how_it_works.png');
+    margin-top:15px;
+}
+#how-it-works ul li {
+    font-family:'AdobeCleanLight';
+    font-size:12px;
+    margin: 0 19px;
+    padding-bottom: 10px;
+}
+#matching {
+    width:172px;
+    height:41px;
+    margin: 27px 19px 10px;
+}
+.box-back {
+    position:absolute;
+    bottom:25px;
+    left:35px;
+    width:172px;
+    height:100px;
+    background:url('../img/box_back.png') no-repeat;
+}
+.cans {
+    position:absolute;
+    width:123px;
+    height:596px;
+    bottom: 44px;
+    left: 51px;
+    clip: rect(0, 223px, 596px, 0);
+}
+.box-front {
+    position:absolute;
+    bottom:0;
+    left:13px;
+    width:197px;
+    height:105px;
+    background:url('../img/box_front.png') no-repeat;
+}
+.can-tower {
+    position:absolute;
+    width:123px;
+    height:596px;
+    background:url('../img/cans.png');
+    top:530px;
+}
+.ribbon {
+    position:absolute;
+    width:135px;
+    height:40px;
+    background:url('../img/ribbon.png');
+    top:555px; /* 25 more than .can-tower top */
+    left:70px;
+    color:#fff;
+    font-family:'AdobeClean';
+    font-weight:bold;
+    opacity:0;
+    text-indent: 16px;
+    line-height: 28px;
+    text-align:left;
+}
+.donate {
+    display:block;
+    width:85px;
+    height:36px;
+    background:url('../img/donate.png');
+    text-indent:-9999px;
+    margin:0 auto;
+}
+h4 {
+    font-family:'AdobeClean';
+    font-size:30px;
+    margin:0 auto;
+    bottom:0;
+    margin:590px 0 10px 0;
+}
+.left {
+    text-align:left;
+    margin-left: 25px;
+}
+#footer {
     position: relative;
-    width: 120px;
-    height: 600px;
-}
-.thermometer-base{
-    position: relative;
-    top: -158px;
-    width: 70px;
-    height: 500px;
-    border-radius: 70px 70px 0 0;
-    background-color: rgb(200,200,200);
-}
-.thermometer-base::before,
-.thermometer-base::after{
-    position: absolute;
-    content: "";
-    background-color: inherit;
-    display: block;
-}
-.thermometer-base::before{
-    top: 460px;
-    width: 70px;
-    height: 40px;
-    box-shadow: inset 26px 0 0 rgba(5,15,25,.15);
-    z-index: 2;
-}
-.thermometer-base::after{
-    top: 474px;
-    left: 50%;
-    width: 100px;
-    height: 100px;
-    border-radius: 100px;
-    margin-left: -50px;
-}
-.thermometer-base,
-.thermometer-base::after{
-    box-shadow:
-    0 0 0 8px rgb(37, 38, 44),
-    inset 26px 0 0 rgba(5,15,25,.15),
-    0 18px 0 rgba(0,0,0,.25),
-    0 19px 20px rgba(0,0,0,.25);
-}
-.thermometer-liquid{
-    position: absolute;
-    bottom: 210px;
-    left: 50%;
-    width: 40px;
-    height: 28px;
-    max-height: 500px;
-    border-radius: 40px 40px 0 0;
-    margin-left: -20px;
-    background-color: rgb(80,10,10);
-    box-shadow:inset 22px 0 0 rgba(5,15,25,.15),
-    inset -6px 0 0 rgba(255,255,255,.1);
-    z-index: 3;
-}
-.thermometer-liquid::before{
-    position: inherit;
-    bottom: -60px;
-    left: 50%;
-    content: "";
-    width: 70px;
-    height: 70px;
-    border-radius: 70px;
-    margin-left: -35px;
-    background-color: inherit;
-    z-index: 3;
-    box-shadow:
-    inset 10px 0 0 rgba(5,15,25,.15),
-    inset -8px -4px 0 rgba(255,255,255,.1);
-}
-.thermometer-rule{
-    position: absolute;
-    bottom: 60%;
-    left: 50%;
-    width: 44px;
-    height: 375px;
-    transform: translate(-50%,38%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    overflow: hidden;
-    z-index: 4;
-}
-.thermometer-rule-steps{
-    width: 55%;
-    height: 10px;
-    border-radius: 0 10px 10px 0;
-    margin-bottom: 25px;
-    background-color: rgba(200,200,200,.5);
-    box-shadow:
-    2px 4px 0 rgba(5,15,25,.5),
-    inset 2px 0 0 rgba(5,15,25,.15);
-}
-.thermometer-rule-steps:first-of-type{
-    margin-top: 40px;
-}
-
-/*ANIMATIONS*/
-@keyframes heat {
-    from{
-        height: -128px;
-        background-color: rgb(80,10,10);
-        box-shadow:
-        inset 22px 0 0 rgba(5,15,25,.15),
-        inset -6px 0 0 rgba(255,255,255,.1);
-    }
-    to{
-        height: 10px;
-        background-color: rgb(180,10,10);
-        box-shadow:
-        inset 22px 0 0 rgba(5,15,25,.15),
-        inset -6px 0 0 rgba(255,255,255,.1),
-        0 0 5px rgb(255,255,255),
-        0 0 20px rgb(255,0,0);
-    }
-}
-.anim-heat{
-    animation-name: heat;
-    animation-duration: 4s;
-    animation-delay: 1s;
-    animation-timing-function: cubic-bezier(.58,.92,.6,-0.3);
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
-
-/*MEDIA QUERIES*/
-
-/*1280 x 600 landscape*/
-@media only screen and
-(max-device-width:1280px){
-    main{
-        transform: scale(.85);
-    }
-}
-/*360 x 640 landscape*/
-@media only screen and
-(min-device-width:360px) and
-(max-device-width:640px) and
-(orientation:landscape){
-    main{
-        top: -50px;
-        transform: scale(.55);
-    }
-}
-/*320 x 480*/
-@media only screen and
-(min-device-width:320px) and
-(max-device-width:480px) and
-(orientation:landscape) {
-    main{
-        top: -70px;
-        transform: scale(.5);
-    }
-}
-@media only screen and
-(min-device-width:320px) and
-(max-device-width:480px) and
-(orientation:portrait) {
-    main{
-        transform: scale(.3);
-    }
+    bottom: -120px;
+    font-family:'AdobeCleanLight';
+    clear: left;
+    font-size: 12px;
 }
