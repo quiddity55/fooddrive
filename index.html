@@ -164,10 +164,15 @@
             var hand = chart.hands.push(new am4charts.ClockHand());
 
             // using chart.setTimeout method as the timeout will be disposed together with a chart
-            hand.showValue(0, 0, am4core.ease.cubicOut);
-            chart.setTimeout(10, 2000);
-            hand.showValue(0, 3, am4core.ease.cubicOut);
-            chart.setTimeout(10, 2000);
+            function startValue() {
+                hand.showValue(0, 1000, am4core.ease.cubicOut);
+            }
+            function endValue() {
+                hand.showValue(3, 1000, am4core.ease.cubicOut);
+            }
+            
+            chart.setTimeout(startValue, 2000);
+            chart.setTimeout(endValue, 2000);
 
             
 		</script>
