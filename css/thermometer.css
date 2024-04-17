@@ -124,7 +124,7 @@
         inset -6px 0 0 rgba(255,255,255,.1);
     }
     to{
-        height: 100px;
+        height: 105px;
         background-color: rgb(180,10,10);
         box-shadow:
         inset 22px 0 0 rgba(5,15,25,.15),
@@ -164,7 +164,7 @@
 /*320 x 480*/
 @media only screen and
 (min-device-width:320px) and
-(max-device-width:480px) and
+(max-device-width:482px) and
 (orientation:landscape) {
     main{
         top: -70px;
